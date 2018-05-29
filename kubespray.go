@@ -19,12 +19,12 @@ type Kubespray struct {
 	AnsibleBecome bool
 }
 
-func NewKubespray() (*Kubespray, error) {
+func NewKubespray(addresses string) (*Kubespray, error) {
 	usr, err := user.Current()
 	if err != nil {
 		return nil, err
 	}
-	return &Kubespray{Verbose: false, Addresses: "", AnsibleUser: usr.Name , AnsibleBecome: false}, nil
+	return &Kubespray{Verbose: false, Addresses: addresses, AnsibleUser: usr.Name , AnsibleBecome: false}, nil
 }
 
 func (kubespray *Kubespray) Provision() error {
