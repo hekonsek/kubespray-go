@@ -3,7 +3,6 @@ package cmd
 import (
 	"github.com/spf13/cobra"
 	"github.com/hekonsek/kubespray-go"
-	"os"
 	"fmt"
 )
 
@@ -23,7 +22,7 @@ var provisionCmd = &cobra.Command{
 	Short: "Provision Kubernetes cluster using kubespray.",
 	Long:  `Provision Kubernetes cluster using kubespray.`,
 	Run: func(cmd *cobra.Command, args []string) {
-			kubespray, err := kubespray_go.NewKubespray(os.Args[1])
+			kubespray, err := kubespray_go.NewKubespray(args[0])
 			kubespray.Verbose = verbose
 			kubespray.AnsibleBecome = ansibleBecome
 			kubespray.AnsibleUser = ansibleUser
