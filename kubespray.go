@@ -93,6 +93,7 @@ func (kubespray *Kubespray) Provision() error {
 		"kube_apiserver_ip": kubeApiserverAddress,
 		"kube_apiserver_address": kubeApiserverAddress,
 		"supplementary_addresses_in_ssl_keys": []string{"10.233.0.1"},
+		"local_volume_provisioner_enabled": "True",
 	}
 	varsJson, err := json.Marshal(vars)
 	if err != nil {
