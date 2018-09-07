@@ -92,7 +92,7 @@ func (kubespray *Kubespray) Provision() error {
 		"kubeconfig_localhost": "True",
 		"kube_apiserver_ip": kubeApiserverAddress,
 		"kube_apiserver_address": kubeApiserverAddress,
-		"supplementary_addresses_in_ssl_keys": []string{"172.22.1.1"},
+		"supplementary_addresses_in_ssl_keys": []string{"172.22.1.1", "10.233.0.1"},
 		"local_volume_provisioner_enabled": "True",
 		"calico_mtu": "1300", // See: https://github.com/projectcalico/calico/issues/1709
 	}
